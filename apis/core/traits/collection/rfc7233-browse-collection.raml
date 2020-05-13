@@ -1,0 +1,60 @@
+#%RAML 1.0 Trait
+#####
+# RFC 7233 paged collection browsing
+#
+# Usage : to be included in the trait section as rfc7233Browsing
+
+usage: used with a GET method over a paged collection
+description: |
+    RFC 7233 paged collection of <<entityType>>.
+    Filtering and ordering are optional features.
+headers:
+  range:
+    type: string
+    required: false
+queryParameters:
+  filter:
+     type: string
+     description: |
+        Conforms to PropertyFilter grammar from poom-services-org.codingmatters.poom.generic.resource.domain.
+        Dotted properties are supported for nested objects.
+        Supported properties are left to the implementation.
+  order-by:
+     type: string
+     description: |
+        Confirms to PropertySort grammar from poom-services-org.codingmatters.poom.generic.resource.domain.
+        Dotted properties are supported for nested objects.
+        Supported properties are left to the implementation.
+responses:
+  200:
+    description: |
+      complete list or last elements of the list
+    headers:
+      Content-Range: string
+      Accept-Range: string
+    body: <<entityType>>[]
+  206:
+    description: |
+      partial list
+    headers:
+      Content-Range: string
+      Accept-Range: string
+    body: <<entityType>>[]
+  416:
+    description: |
+      the specified range is not acceptable (Error code is ILLEGAL_RANGE_SPEC).
+    headers:
+      Content-Range: string
+      Accept-Range: string
+    body: <<error>>
+  400:
+    description: |
+      the query is not acceptable (Error code is ILLEGAL_REQUEST).
+    body: <<error>>
+  404:
+    description: |
+      No paged resource found. Code RESOURCE_NOT_FOUND.
+    body: <<error>>
+  500:
+    description: UNEXPECTED_ERROR.
+    body: <<error>>

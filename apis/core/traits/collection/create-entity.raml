@@ -1,0 +1,27 @@
+#%RAML 1.0 Trait
+#####
+# collection entity creation
+#
+# Usage : to be included in the trait section as collectionEntityCreation
+
+description: |
+    creates an entity from an object validated agains the config form dialog
+body: <<entityCreationType>>
+responses:
+  201:
+    headers:
+      x-entity-id: string
+      location: string
+    body: <<entityType>>
+  400:
+    body: <<error>>
+  401:
+    body: <<error>>
+  403:
+    body: <<error>>
+  404:
+    body: <<error>>
+  405:
+    body: <<error>>
+  500:
+    body: <<error>>
