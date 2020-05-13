@@ -1,11 +1,9 @@
 #%RAML 1.0 Trait
-#####
-# collection entity creation
-#
-# Usage : to be included in the trait section as entityCreation
+### to be included in the traits section as entityCreation
 
+usage: used for a POST over an collection resource
 description: |
-    creates an entity from an object validated agains the config form dialog
+    creates an entity given the <<entityCreationType>> body
 body: <<entityCreationType>>
 responses:
   201:

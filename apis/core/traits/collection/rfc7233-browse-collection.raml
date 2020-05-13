@@ -1,10 +1,7 @@
 #%RAML 1.0 Trait
-#####
-# RFC 7233 paged collection browsing
-#
-# Usage : to be included in the trait section as rfc7233Browsing
+### to be included in the traits section as rfc7233Browsing
 
-usage: used with a GET method over a paged collection
+usage: used for a POST over an collection resource
 description: |
     RFC 7233 paged collection of <<entityType>>.
     Filtering and ordering are optional features.
@@ -28,14 +25,14 @@ queryParameters:
 responses:
   200:
     description: |
-      complete list or last elements of the list
+      complete list or last entities of the collection
     headers:
       Content-Range: string
       Accept-Range: string
     body: <<entityType>>[]
   206:
     description: |
-      partial list
+      partial list of entities of the collection
     headers:
       Content-Range: string
       Accept-Range: string
