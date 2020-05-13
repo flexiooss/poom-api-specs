@@ -1,0 +1,25 @@
+#%RAML 1.0 Trait
+### to be included in the traits section as entityUpdate
+
+usage: used for a PATCH over an entity resource
+description: |
+  partially updates a <<entityType>> entity given the <<entityUpdateType>> body
+body: <<entityUpdateType>>
+responses:
+  200:
+    headers:
+      x-entity-id: string
+      location: string
+    body: <<entityType>>
+  400:
+    body: <<error>>
+  401:
+    body: <<error>>
+  403:
+    body: <<error>>
+  404:
+    body: <<error>>
+  405:
+    body: <<error>>
+  500:
+    body: <<error>>

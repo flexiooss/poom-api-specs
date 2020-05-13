@@ -1,0 +1,11 @@
+#%RAML 1.0 DataType
+# defines error type with emplated messages
+#
+# Usage : to be included in the types section as Message: !include ...
+
+type: object
+properties:
+  key: string
+  args:
+    type: array
+    items: string
