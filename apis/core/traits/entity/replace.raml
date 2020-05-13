@@ -1,0 +1,28 @@
+#%RAML 1.0 Trait
+#####
+# replaces an entity
+#
+# Usage : to be included in the trait section as entityReplace
+
+usage: used for a PUT over an entity resource
+description: |
+  replaces a <<entityType>> entity given the <<entityReplaceType>> body
+body: <<entityReplaceType>>
+responses:
+  200:
+    headers:
+      x-entity-id: string
+      location: string
+    body: <<entityType>>
+  400:
+    body: <<error>>
+  401:
+    body: <<error>>
+  403:
+    body: <<error>>
+  404:
+    body: <<error>>
+  405:
+    body: <<error>>
+  500:
+    body: <<error>>

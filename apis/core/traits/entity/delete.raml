@@ -1,0 +1,21 @@
+#%RAML 1.0 Trait
+#####
+# deletes an entity
+#
+# Usage : to be included in the trait section as entityDelete
+
+usage: used for a DELETE over an entity resource
+description: deletes an entity
+responses:
+  204:
+    description: resource deleted
+  400:
+    body: <<error>>
+  401:
+    body: <<error>>
+  403:
+    body: <<error>>
+  404:
+    body: <<error>>
+  500:
+    body: <<error>>

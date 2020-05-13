@@ -1,14 +1,15 @@
 #%RAML 1.0 Trait
 #####
-# collection entity creation
+# updates an entity
 #
-# Usage : to be included in the trait section as collectionEntityCreation
+# Usage : to be included in the trait section as entityUpdate
 
+usage: used for a PATCH over an entity resource
 description: |
-    creates an entity from an object validated agains the config form dialog
-body: <<entityCreationType>>
+  partially updates a <<entityType>> entity given the <<entityUpdateType>> body
+body: <<entityUpdateType>>
 responses:
-  201:
+  200:
     headers:
       x-entity-id: string
       location: string
