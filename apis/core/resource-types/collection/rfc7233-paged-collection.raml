@@ -1,0 +1,88 @@
+#####
+# defines RFC 7233 paged collection
+#
+# Usage : to be included in the resourceTypes section
+
+
+  pagedCollection:
+    usage: used to implement a paged collection
+    description: |
+      A paged collection of <<entityType>>.
+      The GET method enables to paginate over <<entityType>> entities while conforming to RFC 7233 paging.
+      The POST method enables to create <<entityType>> by providing a <<entityCreationType>> as body.
+    get:
+      description: |
+        RFC 7233 paged collection of <<entityType>>.
+        Filtering and ordering are optional features.
+      headers:
+        range:
+          type: string
+          required: false
+      queryParameters:
+        filter:
+           type: string
+           description: |
+              Conforms to PropertyFilter grammar from poom-services-org.codingmatters.poom.generic.resource.domain.
+              Dotted properties are supported for nested objects.
+              Supported properties are left to the implementation.
+        order-by:
+           type: string
+           description: |
+              Confirms to PropertySort grammar from poom-services-org.codingmatters.poom.generic.resource.domain.
+              Dotted properties are supported for nested objects.
+              Supported properties are left to the implementation.
+      responses:
+        200:
+          description: |
+            complete list or last elements of the list
+          headers:
+            Content-Range: string
+            Accept-Range: string
+          body: <<entityType>>[]
+        206:
+          description: |
+            partial list
+          headers:
+            Content-Range: string
+            Accept-Range: string
+          body: <<entityType>>[]
+        416:
+          description: |
+            the specified range is not acceptable (Error code is ILLEGAL_RANGE_SPEC).
+          headers:
+            Content-Range: string
+            Accept-Range: string
+          body: Error
+        400:
+          description: |
+            the query is not acceptable (Error code is ILLEGAL_REQUEST).
+          body: Error
+        404:
+          description: |
+            No paged resource found. Code RESOURCE_NOT_FOUND.
+          body: Error
+        500:
+          description: UNEXPECTED_ERROR.
+          body: Error
+    post:
+      description: |
+        creates an entity from an object validated agains the config form dialog
+      body: object
+      responses:
+        201:
+          headers:
+            x-entity-id: string
+            location: string
+          body: <<entityCreationType>>
+        400:
+          body: Error
+        401:
+          body: Error
+        403:
+          body: Error
+        404:
+          body: Error
+        405:
+          body: Error
+        500:
+          body: Error
