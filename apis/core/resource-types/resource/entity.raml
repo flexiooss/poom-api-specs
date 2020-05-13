@@ -16,15 +16,15 @@ get:
         location: string
       body: <<entityType>>
     400:
-      body: Error
+      body: <<error>>
     401:
-      body: Error
+      body: <<error>>
     403:
-      body: Error
+      body: <<error>>
     404:
-      body: Error
+      body: <<error>>
     500:
-      body: Error
+      body: <<error>>
 
 put:
   description: |
@@ -37,17 +37,17 @@ put:
         location: string
       body: <<entityType>>
     400:
-      body: Error
+      body: <<error>>
     401:
-      body: Error
+      body: <<error>>
     403:
-      body: Error
+      body: <<error>>
     404:
-      body: Error
+      body: <<error>>
     405:
-      body: Error
+      body: <<error>>
     500:
-      body: Error
+      body: <<error>>
 patch:
   description: |
     partially updates a <<entityType>> entity given the <<entityUpdateType>> body
@@ -59,29 +59,29 @@ patch:
         location: string
       body: <<entityType>>
     400:
-      body: Error
+      body: <<error>>
     401:
-      body: Error
+      body: <<error>>
     403:
-      body: Error
+      body: <<error>>
     404:
-      body: Error
+      body: <<error>>
     405:
-      body: Error
+      body: <<error>>
     500:
-      body: Error
+      body: <<error>>
 delete:
   description: deletes an entity
   responses:
     204:
       description: resource deleted
     400:
-      body: Error
+      body: <<error>>
     401:
-      body: Error
+      body: <<error>>
     403:
-      body: Error
+      body: <<error>>
     404:
-      body: Error
+      body: <<error>>
     500:
-      body: Error
+      body: <<error>>
