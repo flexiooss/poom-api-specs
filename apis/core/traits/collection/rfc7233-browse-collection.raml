@@ -52,6 +52,8 @@ responses:
     description: |
       No paged resource found. Code RESOURCE_NOT_FOUND.
     body: <<error>>
+  405:
+    body: <<error>>
   500:
     description: UNEXPECTED_ERROR.
     body: <<error>>
