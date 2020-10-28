@@ -23,5 +23,9 @@ responses:
       x-entity-id: string
   412:
     description: Precondition Failed
+    headers:
+      error-token: string
   500:
-    description: Un Taggable 
+    description: Un Taggable
+    headers:
+      error-token: string
