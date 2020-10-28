@@ -4,6 +4,8 @@
 usage: used for entity get, head, update and replace
 description: |
   Supports ETag oriented requests with If-Match and If-None-Match
+  see https://tools.ietf.org/html/rfc7232 and https://developer.mozilla.org/en-US/docs/Web/HTTP/Conditional_requests
+  TODO : If-Modified-Since, If-Unmodified-Since with Last-Modified
 headers:
   If-Match: string
   If-None-Match: string
@@ -21,3 +23,5 @@ responses:
       x-entity-id: string
   412:
     description: Precondition Failed
+  500:
+    description: Un Taggable 
