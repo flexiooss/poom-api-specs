@@ -12,10 +12,12 @@ responses:
     headers:
       ETag: string
       Cache-Control: string
+      x-entity-id: string
   304:
     description: Not Modified
     headers:
       ETag: string
       Cache-Control: string
+      x-entity-id: string
   412:
     description: Precondition Failed
