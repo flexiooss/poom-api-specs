@@ -1,22 +1,15 @@
 #%RAML 1.0 Trait
 ### to be included in the traits section as taggedEntity
 
-usage: used for entity get, head, update and replace
+usage: used for entity put and patch
 description: |
-  Supports ETag oriented requests with If-Match and If-None-Match
+  Supports ETag oriented requests with If-None-Match
   see https://tools.ietf.org/html/rfc7232 and https://developer.mozilla.org/en-US/docs/Web/HTTP/Conditional_requests
   TODO : If-Modified-Since, If-Unmodified-Since with Last-Modified
 headers:
-  If-Match: string
   If-None-Match: string
 responses:
   200:
-    headers:
-      ETag: string
-      Cache-Control: string
-      x-entity-id: string
-  304:
-    description: Not Modified
     headers:
       ETag: string
       Cache-Control: string
