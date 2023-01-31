@@ -1,0 +1,24 @@
+#%RAML 1.0 Trait
+### to be included in the traits section as asynchronousResponseCallback
+
+usage: used for a POST - response to an asynchronous request for an <<entityType>>
+headers:
+  status-code: string
+body: <<entityType>>
+responses:
+  204:
+  410:
+    description: the callback is not valid anymore
+    body: Error
+  400:
+    body: <<error>>
+  401:
+    body: <<error>>
+  403:
+    body: <<error>>
+  404:
+    body: <<error>>
+  405:
+    body: <<error>>
+  500:
+    body: <<error>>

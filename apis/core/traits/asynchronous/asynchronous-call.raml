@@ -1,0 +1,11 @@
+#%RAML 1.0 Trait
+### to be included in the traits section as asynchronousCall
+
+usage: used for a POST, PUT, PATCH or DELETE - enables requesting the response to be issued using an optional asynchronous callback
+headers:
+  is-asynchronous: boolean
+  asynchronous-callback:
+    description: optional - the url for the response to be posted on (see asynchronous-response.raml)
+    type: string
+responses:
+  202:
