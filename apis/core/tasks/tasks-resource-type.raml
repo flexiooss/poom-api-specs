@@ -1,0 +1,27 @@
+#%RAML 1.0 ResourceType
+
+description: task service entry point with <<task-name>>
+usage: on an entry point that implements a task service entry point
+displayName: <<task-name>> collection
+
+get:
+  is: [ rfc7233Browsing: { entityType: Task, error: Error } ]
+post:
+  is: [ entityCreation: { entityCreationType: TaskCreation, entityType: Task, error: Error } ]
+
+/{task-id}:
+  displayName: <<task-name>> entity
+  get:
+    is: [ entityRetrieve: { entityType: Task, error: Error } ]
+
+  /logs:
+    displayName: <<task-name>> logs
+    is: [ entityCreation: { entityCreationType: TaskLog, entityType: TaskLog, error: Error } ]
+
+  /status:
+    displayName: <<task-name>> status changes
+    is: [ entityCreation: { entityCreationType: TaskStatusChange, entityType: TaskStatusChange, error: Error } ]
+
+  /result:
+    displayName: <<task-name>> results
+    is: [ entityCreation: { entityCreationType: object, entityType: object, error: Error } ]

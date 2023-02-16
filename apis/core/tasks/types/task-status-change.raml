@@ -1,0 +1,11 @@
+#%RAML 1.0 DataType
+#
+# Usage : to be included in the types section as TaskStatusChange: !include ...
+
+type: object
+properties:
+  status:
+    run:
+      enum: [PENDING, RUNNING, DONE]
+    exit:
+      enum: [SUCCESS, FAILURE]
