@@ -1,0 +1,7 @@
+#%RAML 1.0 ResourceType
+
+description: task status service entry point with <<task-name>>, <<task-params>>
+usage: on an entry point that implements a task service entry point
+
+displayName: <<task-name>> status changes
+is: [ entityCreation: { entityCreationType: TaskStatusChange, entityType: TaskStatusChange, error: Error } ]

@@ -1,0 +1,7 @@
+#%RAML 1.0 ResourceType
+
+description: task result service entry point with <<task-name>>, <<task-params>>
+usage: on an entry point that implements a task service entry point
+
+displayName: <<task-name>> results
+is: [ entityCreation: { entityCreationType: object, entityType: object, error: Error } ]
