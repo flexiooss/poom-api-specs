@@ -10,3 +10,10 @@ post:
   is: [ entityCreation: { entityCreationType: <<task-params>>, entityType: Task, error: Error } ]
   headers:
     callback-url: string
+
+/{task-id}:
+  displayName: <<task-name>> entity
+  uriParameters:
+    task-id: string
+  get:
+    is: [ entityRetrieve: { entityType: Task, error: Error } ]
