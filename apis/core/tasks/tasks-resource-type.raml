@@ -1,13 +1,15 @@
 #%RAML 1.0 ResourceType
 
-description: task service entry point with <<task-name>>
+description: task service entry point with <<task-name>>, <<task-params>>
 usage: on an entry point that implements a task service entry point
 displayName: <<task-name>> collection
 
 get:
   is: [ rfc7233Browsing: { entityType: Task, error: Error } ]
 post:
-  is: [ entityCreation: { entityCreationType: TaskCreation, entityType: Task, error: Error } ]
+  is: [ entityCreation: { entityCreationType: <<task-params>>, entityType: Task, error: Error } ]
+  headers:
+    callback-url: string
 
 /{task-id}:
   displayName: <<task-name>> entity
