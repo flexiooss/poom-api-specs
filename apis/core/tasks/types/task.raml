@@ -5,10 +5,12 @@
 type: object
 properties:
   status:
-    run:
-      enum: [PENDING, RUNNING, DONE]
-    exit:
-      enum: [SUCCESS, FAILURE]
+    type: object
+    properties:
+      run:
+        enum: [PENDING, RUNNING, DONE]
+      exit:
+        enum: [SUCCESS, FAILURE]
   created-at: datetime-only
   started-at: datetime-only
   finished-at: datetime-only
