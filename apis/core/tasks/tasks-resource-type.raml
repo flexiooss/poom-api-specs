@@ -11,21 +11,21 @@ post:
   headers:
     callback-url: string
 
-/task:
+/task/:
   displayName: <<task-name>> entity
 #  uriParameters:
 #    task-id: string
   get:
     is: [ entityRetrieve: { entityType: Task, error: Error } ]
 
-  /logs:
-    displayName: <<task-name>> logs
-    is: [ entityCreation: { entityCreationType: TaskLog, entityType: TaskLog, error: Error } ]
-
-  /status:
-    displayName: <<task-name>> status changes
-    is: [ entityCreation: { entityCreationType: TaskStatusChange, entityType: TaskStatusChange, error: Error } ]
-
-  /result:
-    displayName: <<task-name>> results
-    is: [ entityCreation: { entityCreationType: object, entityType: object, error: Error } ]
+#  /logs:
+#    displayName: <<task-name>> logs
+#    is: [ entityCreation: { entityCreationType: TaskLog, entityType: TaskLog, error: Error } ]
+#
+#  /status:
+#    displayName: <<task-name>> status changes
+#    is: [ entityCreation: { entityCreationType: TaskStatusChange, entityType: TaskStatusChange, error: Error } ]
+#
+#  /result:
+#    displayName: <<task-name>> results
+#    is: [ entityCreation: { entityCreationType: object, entityType: object, error: Error } ]
