@@ -8,7 +8,7 @@ uriParameters:
   task-id: string
 get:
   is: [ entityRetrieve: { entityType: Task, error: Error } ]
-  
+
 /logs:
   displayName: <<task-name>> logs
   is: [ entityCreation: { entityCreationType: TaskLog, entityType: TaskLog, error: Error } ]
