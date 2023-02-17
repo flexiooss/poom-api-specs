@@ -13,6 +13,8 @@ post:
 
 /{task-id}:
   displayName: <<task-name>> entity
+  uriParameters:
+    task-id: string
   get:
     is: [ entityRetrieve: { entityType: Task, error: Error } ]
 
