@@ -11,10 +11,10 @@ post:
   headers:
     callback-url: string
 
-/{task-id}:
+/task:
   displayName: <<task-name>> entity
-  uriParameters:
-    task-id: string
+#  uriParameters:
+#    task-id: string
   get:
     is: [ entityRetrieve: { entityType: Task, error: Error } ]
 
