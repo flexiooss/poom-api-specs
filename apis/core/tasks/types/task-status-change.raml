@@ -4,10 +4,7 @@
 
 type: object
 properties:
-  status:
-    type: object
-    properties:
-      run:
-        enum: [PENDING, RUNNING, DONE]
-      exit:
-        enum: [SUCCESS, FAILURE]
+  run:
+    enum: [PENDING, RUNNING, DONE]
+  exit:
+    enum: [SUCCESS, FAILURE]
