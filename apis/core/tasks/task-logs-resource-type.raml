@@ -1,0 +1,8 @@
+#%RAML 1.0 ResourceType
+
+description: task log service entry point with <<task-name>>
+usage: on an entry point that implements a task service entry point
+
+displayName: <<task-name>> logs
+post:
+  is: [ entityCreation: { entityCreationType: TaskLog, entityType: TaskLog, error: Error } ]

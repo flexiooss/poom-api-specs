@@ -1,0 +1,11 @@
+#%RAML 1.0 DataType
+# defines task service types
+#
+# Usage : to be included in the types section as TaskLog: !include ...
+
+type: object
+properties:
+  at: datetime-only
+  log: string
+  level:
+    enum: [ERROR, INFO]
