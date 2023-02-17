@@ -4,4 +4,5 @@ description: task log service entry point with <<task-name>>, <<task-params>>
 usage: on an entry point that implements a task service entry point
 
 displayName: <<task-name>> logs
-is: [ entityCreation: { entityCreationType: TaskLog, entityType: TaskLog, error: Error } ]
+post:
+  is: [ entityCreation: { entityCreationType: TaskLog, entityType: TaskLog, error: Error } ]
