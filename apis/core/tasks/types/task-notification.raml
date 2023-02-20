@@ -1,0 +1,10 @@
+#%RAML 1.0 DataType
+#
+# Usage : to be included in the types section as TaskNotification: !include ...
+
+type: object
+properties:
+  type:
+    enum: [STATUS_CHANGE, LOG_APPENDED]
+  task: Task
+  log: TaskLog
