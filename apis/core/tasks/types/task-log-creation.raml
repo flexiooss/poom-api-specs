@@ -1,0 +1,9 @@
+#%RAML 1.0 DataType
+#
+# Usage : to be included in the types section as TaskLogCreation: !include ...
+
+type: object
+properties:
+  log: string
+  level:
+    enum: [ERROR, INFO]
