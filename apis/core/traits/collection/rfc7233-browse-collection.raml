@@ -50,6 +50,10 @@ responses:
     description: |
       the query is not acceptable (Error code is ILLEGAL_REQUEST).
     body: <<error>>
+  403:
+    description: |
+      Paged resource access denied. Code ILLEGAL_REQUEST.
+    body: <<error>>
   404:
     description: |
       No paged resource found. Code RESOURCE_NOT_FOUND.
