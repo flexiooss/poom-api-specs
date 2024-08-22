@@ -6,6 +6,8 @@ description: deletes an entity
 responses:
   204:
     description: resource deleted
+    headers:
+      op-monitoring-url: string
   400:
     body: <<error>>
   401:
