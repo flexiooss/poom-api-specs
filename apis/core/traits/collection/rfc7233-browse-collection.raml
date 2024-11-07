@@ -9,6 +9,9 @@ headers:
   range:
     type: string
     required: false
+  since:
+    type: string
+    required: false
 queryParameters:
   filter:
      type: string
@@ -31,6 +34,7 @@ responses:
       Accept-Range: string
       Cache-Control: string
       x-entity-type: string
+      since: string
     body: <<entityType>>[]
   206:
     description: |
@@ -40,6 +44,7 @@ responses:
       Accept-Range: string
       Cache-Control: string
       x-entity-type: string
+      since: string
     body: <<entityType>>[]
   416:
     description: |
