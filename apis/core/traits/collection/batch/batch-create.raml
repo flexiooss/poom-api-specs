@@ -4,20 +4,24 @@
 usage: used for a POST over an collection resource
 description: |
   creates an entity given the <<entityCreationType>> body
-body: <<entityCreationType>>[]
+body:
+  type: array
+  items: <<entityCreationType>>
 responses:
   201:
     headers:
       x-entity-type: string
       location: string
       op-monitoring-url: string
-    body: BatchCreateResponse
+#    body: BatchCreateResponse
+    body: object
   207:
     headers:
       x-entity-type: string
       location: string
       op-monitoring-url: string
-    body: BatchCreateResponse
+#    body: BatchCreateResponse
+    body: object
   400:
     body: <<error>>
   401:
