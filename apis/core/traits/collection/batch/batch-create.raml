@@ -1,0 +1,32 @@
+#%RAML 1.0 Trait
+### to be included in the traits section as entityCreation
+
+usage: used for a POST over an collection resource
+description: |
+  creates an entity given the <<entityCreationType>> body
+body: <<entityCreationType>>[]
+responses:
+  201:
+    headers:
+      x-entity-type: string
+      location: string
+      op-monitoring-url: string
+    body: BatchCreateResponse
+  207:
+    headers:
+      x-entity-type: string
+      location: string
+      op-monitoring-url: string
+    body: BatchCreateResponse
+  400:
+    body: <<error>>
+  401:
+    body: <<error>>
+  403:
+    body: <<error>>
+  404:
+    body: <<error>>
+  405:
+    body: <<error>>
+  500:
+    body: <<error>>
