@@ -6,3 +6,5 @@ usage: on an entry point that implements a task service entry point
 displayName: <<task-name>> logs
 post:
   is: [ entityCreation: { entityCreationType: TaskLogCreation, entityType: TaskLog, error: Error } ]
+get:
+  is: [ rfc7233Browsing: { entityType: TaskLog, error: Error } ]
