@@ -1,0 +1,6 @@
+@startuml
+Client -> API : GET /collection
+activate API
+    API -> Client: "206\nheaders{}\npayload=[item-1, item-2]"
+deactivate API
+@enduml
