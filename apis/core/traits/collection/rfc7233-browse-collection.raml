@@ -57,6 +57,10 @@ responses:
     description: |
       the query is not acceptable (Error code is ILLEGAL_REQUEST).
     body: <<error>>
+  401:
+    description: |
+      Paged resource access denied. Code BAD_REQUEST.
+    body: <<error>>
   403:
     description: |
       Paged resource access denied. Code BAD_REQUEST.
