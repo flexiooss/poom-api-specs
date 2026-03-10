@@ -54,15 +54,18 @@
         permission::<target-type>|<target>|<permission>
         permission::<flexapp>|<target-type>|<target>|<permission>
       
-      <flexapp> is a flexapp id (optional)
-      <target-type> values must match io.flexio.permissions.TargetType enum values
-      <target> a target url 
-      <permission> values must match io.flexio.permissions.Permissions enum value
+        <flexapp> is a flexapp id (optional)
+        <target-type> values must match io.flexio.permissions.TargetType enum values
+        <target> a target url 
+        <permission> values must match io.flexio.permissions.Permissions enum value
       
-      <target-type> and <permission> values match the enum name, or the lower cased name, or the lower cased names with _ replaced by -.
-      All token are trimmed so one can add spaces around the values
+        <target-type> and <permission> values match the enum name, or the lower cased name, or the lower cased names with _ replaced by -.
+        All token are trimmed so one can add spaces around the values
+        
+        <flexapp> and <resource> are templates that can use uri parameters, query parameters and headers with the following syntax :
+        {uri:parameter1}{header:parameter2}{query:parameter3}
       
-      <flexapp> and <resource> are templates that can use uri parameters, query parameters and headers with the following syntax :
-      {uri:parameter1}{header:parameter2}{query:parameter3}
       
-      
+      account:
+        account::valid|<account name>
+        account::valid-connected|<account name>
