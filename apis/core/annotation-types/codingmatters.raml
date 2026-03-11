@@ -47,6 +47,10 @@
         - permission::flexapps|api://flexapp/{uri:parameter1}|read_flexapp
         - permission::{uri:parameter1}|resource|api://flexapp/{uri:parameter2}|read_record
       
+      Valid token are :
+        - {uri:param} : param must be a defined uri parameter name
+        - {header:param} : param must be a defined header name
+        - {query:param} : param must be a defined query parameter name
       
       When used on flexio apis
       
@@ -67,5 +71,10 @@
       
       
       account:
-        account::valid|<account name>
-        account::valid-connected|<account name>
+        account::valid|<account name> : <account name> is a valid account
+        account::user|<account name> : current user is connected to the account <account name>
+      
+      application:
+        application::context|<ApplicationContext value> : upper or lower cased io.flexio.services.resources.api.types.ApplicationContext enum values
+        
+        
