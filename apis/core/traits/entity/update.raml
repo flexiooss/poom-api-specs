@@ -4,6 +4,9 @@
 usage: used for a PATCH over an entity resource
 description: |
   partially updates a <<entityType>> entity given the <<entityUpdateType>> body
+queryParameters:
+  resolved-properties:
+    type: string
 body: <<entityUpdateType>>
 responses:
   200:
