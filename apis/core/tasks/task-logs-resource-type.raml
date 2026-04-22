@@ -3,7 +3,6 @@
 description: task log service entry point with <<task-name>>
 usage: on an entry point that implements a task service entry point
 
-(paged-collection):
 displayName: <<task-name>> logs
 post:
   is: [ entityCreation: { entityCreationType: TaskLogCreation, entityType: TaskLog, error: Error } ]
