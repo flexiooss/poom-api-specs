@@ -5,11 +5,36 @@ usage: used for a GET over an collection resource
 description: |
     RFC 7233 paged collection of <<entityType>>.
     Filtering and ordering are optional features.
+  
+    SINCE / BEFORE / LATEST / OLDEST:
+    Une valeur que le service peut interpréter comme la valeur d'un critère d'ordre absolu et immutable.
+    
+    La réponse est paginée et ordonnée.
+    SINCE : ordonnés du plus ancien au plus récent
+    BEFORE : ordonnés du plus récent au plus ancien
+    
+    Dans le cas où SINCE et BEFORE sont spécifiés, le BEFORE devient un filtre, les résultats sont ordonnées comme un SINCE seul.
+  
+    init-ordered:LATEST renvoie les derniers éléments avec un since et un before correspondant
+    init-ordered:OLDEST renvoie les premiers éléments avec un since correspondant
 headers:
   range:
     type: string
     required: false
   since:
+    description: |
+      see description
+    type: string
+    required: false
+  before:
+    description: |
+      see description
+    type: string
+    required: false
+  init-ordered:
+    description: |
+      LATEST | OLDEST
+      see description
     type: string
     required: false
 queryParameters:
@@ -38,6 +63,7 @@ responses:
       Cache-Control: string
       x-entity-type: string
       since: string
+      before: string
     body: <<entityType>>[]
   206:
     description: |
@@ -48,6 +74,7 @@ responses:
       Cache-Control: string
       x-entity-type: string
       since: string
+      before: string
     body: <<entityType>>[]
   416:
     description: |
