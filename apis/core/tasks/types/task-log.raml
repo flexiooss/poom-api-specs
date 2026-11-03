@@ -7,6 +7,8 @@ type: object
 properties:
   at: datetime-only
   log: string
+  # detail of the log line, shown under it ; log stays the line label
+  description: string
   level:
     enum: [ ERROR, WARN, INFO ]
   task-id: string
